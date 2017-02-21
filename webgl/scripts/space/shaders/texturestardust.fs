@@ -14,6 +14,6 @@ void main(void) {
     gl_FragColor[0] = textureColor[0]*outColor[0];
     gl_FragColor[1] = textureColor[1]*outColor[1];
     gl_FragColor[2] = textureColor[2]*outColor[2];
-    gl_FragColor[3] = textureColor[3]*outColor[3];
+    gl_FragColor[3] = textureColor[3]*outColor[3]+ 0.5;
 	
 }

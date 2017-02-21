@@ -390,7 +390,7 @@ function drawRectangle(i, circleColor){
     gl.vertexAttribPointer(gl.currentShader.vertexPositionAttribute, rectangleBuffer.itemSize, gl.FLOAT, false, 11*4, 0);
     gl.vertexAttribPointer(gl.currentShader.vShift, 1, gl.FLOAT, false, 11*4, 3*4);
     gl.vertexAttribPointer(gl.currentShader.hShift, 1, gl.FLOAT, false, 11*4, 4*4);
-    gl.vertexAttribPointer(gl.currentShader.vColor, 4, gl.FLOAT, false, 11*4, 5*4);
+    gl.vertexAttribPointer(gl.currentShader.vColor, 4, gl.FLOAT, false, 11*4, 7*4);
 
     gl.vertexAttribPointer(gl.currentShader.textureCoordAttribute, 2, gl.FLOAT, false, 11*4, 5*4);
 
@@ -405,7 +405,7 @@ function drawCircleTextured(i, circleColor){
     gl.vertexAttribPointer(gl.currentShader.vertexPositionAttribute, rectangleBuffer.itemSize, gl.FLOAT, false, 11*4, 0);
     gl.vertexAttribPointer(gl.currentShader.vShift, 1, gl.FLOAT, false, 11*4, 3*4);
     gl.vertexAttribPointer(gl.currentShader.hShift, 1, gl.FLOAT, false, 11*4, 4*4);
-    gl.vertexAttribPointer(gl.currentShader.vColor, 4, gl.FLOAT, false, 11*4, 5*4);
+    gl.vertexAttribPointer(gl.currentShader.vColor, 4, gl.FLOAT, false, 11*4, 7*4);
 
     gl.vertexAttribPointer(gl.currentShader.textureCoordAttribute, 2, gl.FLOAT, false, 11*4, 5*4);
 

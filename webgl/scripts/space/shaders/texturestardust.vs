@@ -23,7 +23,7 @@ void main(void) {
     
     float d = length(worldPos.xyz);
     float c = clamp((1000.0-d)/300.0, 0.0, 1.0);
-    outColor = vec4(color.r, color.g, color.b, color.a*c);
+    outColor = vec4(color.r, color.g, color.b, color.a*c) * vColor;
     outTextoreCoord = aTextureCoord;
 }
 

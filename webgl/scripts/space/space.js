@@ -4,9 +4,11 @@ require("scripts/space/objects/model.js");
 require("scripts/space/objects/imageplanet.js");
 require("scripts/space/objects/videoplanet.js");
 require("scripts/space/objects/musicplanet.js");
+require("scripts/space/objects/htmlplanet.js");
 require("scripts/space/gui/scroll.js");
 require("scripts/space/gui/image.js");
 require("scripts/space/objects/system.js");
+require("scripts/html2canvas.js");
 
 var width, height;
 
@@ -297,6 +299,11 @@ function spaceStart(c){
     mouseList.push(m);
 	
 	
+	
+	var html = new HtmlPlanet("lepetit.png", [-10, 0, 0], [0.634, 0.7686, 0.9882, 1.0], [240, 480, 327]);
+	drawList.push(html);
+    tickList.push(html);
+    mouseList.push(html);
 	
 	
     moved = true;
