@@ -198,7 +198,7 @@ function spaceStart(c){
     tickList.push(img);
     mouseList.push(img);
 	
-	img = new ImagePlanet("planet6.png", [-94.10913848876953,8.337488174438477,216.32852172851562], [0.427, 0.262, 0.419, 1.0], [256, 256, 480]);
+	img = new ImagePlanet("planet6.png", [-194.10913848876953,8.337488174438477,216.32852172851562], [0.427, 0.262, 0.419, 1.0], [256, 256, 480]);
     drawList.push(img);
     tickList.push(img);
     mouseList.push(img);
@@ -221,12 +221,12 @@ function spaceStart(c){
     mouseList.push(img);
 
 	
-	img = new ImagePlanet("planet2.png", [-174.61439514160156,3.6267240047454834,44.23843765258789], [0.05, 0.05, 0.12, 1.0], [256, 256, 480]);
+	img = new ImagePlanet("planet2.png", [-174.61439514160156,3.6267240047454834,44.23843765258789], [0.35, 0.05, 0.32, 1.0], [256, 256, 480]);
     drawList.push(img);
     tickList.push(img);
     mouseList.push(img);
 	
-	img = new ImagePlanet("planet3.png", [-191.70568337508007,7.373902180759617,127.85941254721209], [0.05, 0.05, 0.12, 1.0], [256, 256, 480]);
+	img = new ImagePlanet("planet3.png", [-191.70568337508007,7.373902180759617,127.85941254721209], [0.05, 0.35, 0.32, 1.0], [256, 256, 480]);
     drawList.push(img);
     tickList.push(img);
     mouseList.push(img);
@@ -252,7 +252,7 @@ function spaceStart(c){
     tickList.push(img);
     mouseList.push(img);
 	
-	img = new ImagePlanet("lepetit.png", [-20, 10, 40], [0.634, 0.7686, 0.9882, 1.0], [240, 480, 327]);
+	img = new ImagePlanet("lepetit.png", [-50, 30, 40], [0.634, 0.7686, 0.9882, 1.0], [240, 480, 327]);
     drawList.push(img);
     tickList.push(img);
     mouseList.push(img);
@@ -268,12 +268,8 @@ function spaceStart(c){
     mouseList.push(vd);
 	
 	
-	vd = new VideoPlanet("what_what", [-201.18425964124503,-54.948479829590944,79.8492188417364], [0, 1, 0, 1.0], [["mp4", "mp4"], ["flv", "flv"]]);
-    drawList.push(vd);
-    tickList.push(vd);
-    mouseList.push(vd);
 		
-	vd = new VideoPlanet("do_i_wanna_know", [28.05012321472168,40.3968557119369507,158.83096313476562], [0.1, 0.1, 0.1, 1.0], [["mp4", "mp4"], ["avi", "avi"], ["ogv", "ogg"]]);
+	vd = new VideoPlanet("do_i_wanna_know", [28.05012321472168,40.3968557119369507,158.83096313476562], [0.1, 0.1, 0.4, 1.0], [["mp4", "mp4"], ["avi", "avi"], ["ogv", "ogg"]]);
     drawList.push(vd);
     tickList.push(vd);
     mouseList.push(vd);

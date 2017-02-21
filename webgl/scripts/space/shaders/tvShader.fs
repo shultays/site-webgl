@@ -6,7 +6,7 @@ uniform float time;
 uniform float rand1x, rand1y; 
 uniform float rand2x, rand2y; 
 
-float s = 0.1;
+float s = 0.08;
 
 float rand(vec2 co){
     return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);

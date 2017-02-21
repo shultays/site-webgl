@@ -34,6 +34,7 @@ InfoBall.prototype.draw = function(){
 	var xDiff = mouseState[0].x-center[0];
 	var yDiff = mouseState[0].y-center[1];
 	var angle = Math.atan2(yDiff, xDiff);
+	
 	var distance = 40+d;
 	var maxDistance = Math.sqrt(xDiff*xDiff+yDiff*yDiff);
 	var cos = xDiff/maxDistance;
