@@ -27,7 +27,11 @@ HtmlPlanet.prototype.loadTexture = function(){
 	
 console.log("hi");
 
-    html2canvas(document.getElementById('backstage'), {
+	var tt = document.createElement("div");
+	tt.innerHTML = "<font color='red'>This is some teasdadasdasdxt!<br>This is some teasdadasdasdxt!<br>This is some teasdadasdasdxt!<br>This is some teasdadasdasdxt!<br>This is some teasdadasdasdxt!<br>This is some teasdadasdasdxt!<br>This is some teasdadasdasdxt!<br>This is some teasdadasdasdxt!<br>This is some teasdadasdasdxt!<br>This is some teasdadasdasdxt!<br>This is some teasdadasdasdxt!<br>This is some teasdadasdasdxt!<br>This is some teasdadasdasdxt!<br></font>"
+    document.body.appendChild(tt)
+	
+    html2canvas(tt, {
       onrendered: function(c) {
 			console.log(c.width + " " + c.height)
 
@@ -41,13 +45,13 @@ console.log("hi");
 			gl.bindTexture(gl.TEXTURE_2D, null);
 
         _this.shiftCenter = [ 0, 0];
-        _this.scale = 1.0;
+        _this.scale = 0.2;
         _this.loaded = true;
 		
 		_this.canvas = c
+		document.body.removeChild(tt)
 			
       },
-		background : '#FFFFFF',
 		width: 256,
 		height: 256
    });
