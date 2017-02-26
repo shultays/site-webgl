@@ -1,12 +1,11 @@
-<html>
+<html lang="eng">
     <head>
         <title>WebGL</title>
-
         <style type="text/css">
             html, body, canvas, div { margin: 0; border: 0 none; padding: 0; }
-            html, body, #full, #backstage, #frontstage { height: 100%; min-height: 100%; }
+            html, body, #full, #backstage, #frontstage, #backcanvas{ height: 100%; min-height: 100%; }
             #full, #frontstage { margin: 0 auto; position: absolute;}
-            #backstage { width:100%; background: black; margin: 0 auto; position: absolute; }
+            #backstage,#backcanvas { width:100%; background: black; margin: 0 auto; position: absolute; }
         </style>
 
         <script src="scripts/jquery-1.3.2.min.js"></script>
@@ -44,6 +43,7 @@
 
         <div id="backstage">
 		</div>
+        <canvas id="backcanvas" ></canvas>
         <canvas id="full" ></canvas>
         <canvas id="frontstage" ></canvas>
     </body>

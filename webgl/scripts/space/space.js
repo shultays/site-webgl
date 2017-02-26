@@ -5,6 +5,12 @@ require("scripts/space/objects/imageplanet.js");
 require("scripts/space/objects/videoplanet.js");
 require("scripts/space/objects/musicplanet.js");
 require("scripts/space/objects/htmlplanet.js");
+require("scripts/space/objects/cv/personal.js");
+require("scripts/space/objects/cv/education.js");
+require("scripts/space/objects/cv/taleworlds.js");
+require("scripts/space/objects/cv/peak.js");
+require("scripts/space/objects/cv/hepsiburada.js");
+require("scripts/space/objects/cv/arcelik.js");
 require("scripts/space/gui/scroll.js");
 require("scripts/space/gui/image.js");
 require("scripts/space/objects/system.js");
@@ -64,8 +70,9 @@ function spaceStart(c){
     initGL(c);
     initTools();
     frontCanvas = document.getElementById("frontstage");
-
     frontContext = frontCanvas.getContext("2d");
+    backCanvas = document.getElementById("backcanvas");
+    backContext = backCanvas.getContext("2d");
     spaceResize(c.width, c.height);
 
     document.onmousemove = handleMouseMove;
@@ -300,12 +307,35 @@ function spaceStart(c){
 	
 	
 	
-	var html = new HtmlPlanet("lepetit.png", [-10, 0, 0], [0.634, 0.7686, 0.9882, 1.0], [240, 480, 327]);
-	drawList.push(html);
-    tickList.push(html);
-    mouseList.push(html);
+	var personal = new PersonalPlanet([-10, 0, 0], [0.634, 0.7686, 0.9882, 1.0]);
+	drawList.push(personal);
+    tickList.push(personal);
+    mouseList.push(personal);
 	
+	var education = new EducationPlanet([20, 10, 10], [0.934, 0.8586, 0.7882, 1.0]);
+	drawList.push(education);
+    tickList.push(education);
+    mouseList.push(education);
 	
+	var taleworlds = new TaleworldsPlanet("taleworlds.png", [20, 20, 5],  [102/255.0, 97/255.0, 101/255.0, 1.0]);
+    drawList.push(taleworlds);
+    tickList.push(taleworlds);
+    mouseList.push(taleworlds);
+    
+	var taleworlds = new PeakPlanet("peak.png", [-20, 20, 5],  [147/255.0, 237/255.0, 227/255.0, 1.0]);
+    drawList.push(taleworlds);
+    tickList.push(taleworlds);
+    mouseList.push(taleworlds);
+	
+	var hepsiburada = new HepsiburadaPlanet("hepsiburada.png", [-20, -20, -20],  [228/255.0, 141/255.0, 38/255.0, 1.0]);
+    drawList.push(hepsiburada);
+    tickList.push(hepsiburada);
+    mouseList.push(hepsiburada);
+	
+	var arcelik = new ArcelikPlanet("arcelik.png", [30, 20, -20],  [228/255.0, 228/255.0, 228/255.0, 1.0]);
+    drawList.push(arcelik);
+    tickList.push(arcelik);
+    mouseList.push(arcelik);
     moved = true;
     cameraChanged = true;
     tick();
@@ -335,6 +365,7 @@ function initGL(canvas) {
 }
 
 function tick() {
+    frontCanvas.style.cursor = "default"
     current = new Date().getTime();
     var diff = current-lastTick;
     control(diff, current);
@@ -583,7 +614,7 @@ function draw(){
 
 	
 	
-	frontContext.lineWidth=1	;
+	frontContext.lineWidth=1;
     frontContext.strokeStyle="#FFFFFF";
     frontContext.beginPath();
     frontContext.moveTo(10, height-20);
@@ -607,7 +638,8 @@ function handleMouseMove(event){
     mouseState[event.button].oldY = mouseState[event.button].y;
     mouseState[event.button].x = event.clientX;
     mouseState[event.button].y = event.clientY;
-	
+	mousex = event.clientX
+	mousey = event.clientY
 	if(mouseState[event.button].guiObject){
 		mouseState[event.button].guiObject.mouseMove(mouseState[event.button].oldX, mouseState[event.button].oldY, mouseState[event.button].x, mouseState[event.button].y);
 	}
@@ -624,7 +656,7 @@ function handleMouseRelease(event){
         var oldRet = mouseState[event.button].clickObject[1];
         var ret = mouseList[i].isMouseInside(getWorldViewProjectionMatrix, event.clientX, event.clientY);
         if(ret && ret[0] == oldRet[0] && ret[1] == oldRet[1] && ret[2] == oldRet[2]){
-            mouseList[i].fireMouseClick(ret);
+            mouseList[i].fireMouseClick(ret, event.clientX, event.clientY);
         }
 		mouseState[event.button].clickObject = false;
     }
